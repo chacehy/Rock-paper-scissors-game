@@ -3,35 +3,38 @@ let rock = "rock"
 let paper = "paper"
 let scissors = "scissors"
 let playerScore = 0;
-let pcScore = 0;
-function getPcChoice(){
-    let pcChoice = Math.floor(Math.random() * 3)
-    if(pcChoice === 0){
+let computerScore = 0;
+
+
+function getComputerChoice(){
+    let computerChoice = Math.floor(Math.random() * 3);
+    if(computerChoice === 0){
         return rock
-    }else if(pcChoice === 1){
+    }else if(computerChoice === 1){
         return paper
-    }else if(pcChoice=== 2){
+    }else if(computerChoice=== 2){
         return scissors
     }
 } 
 
 
-let computerSelection = getPcChoice()
+let computerSelection = getComputerChoice()
 
 function game(computerSelection, playerSelection){
-    computerSelection = getPcChoice();
+
+    computerSelection = getComputerChoice();
     playerSelection = prompt("choose your righteous weapon");
     if ((playerSelection === rock && computerSelection == scissors) 
     || (playerSelection === scissors && computerSelection == paper)
     || (playerSelection === paper && computerSelection == rock)){ 
         playerScore++
-        console.log(`player scores, current score : ${playerScore} : ${pcScore}`)
+        console.log(`player scores, current score : ${playerScore} : ${computerScore}`)
     
 }else if ((computerSelection == rock && playerSelection == scissors) 
         || (computerSelection == scissors && playerSelection == paper)
         || (computerSelection == paper && playerSelection == rock)){
-        pcScore++
-        console.log(`bot scores, current score : ${playerScore} : ${pcScore}`)
+        computerScore++
+        console.log(`computer scores, current score : ${playerScore} : ${computerScore}`)
 }
 else{
     console.log('that was a tie')
@@ -41,14 +44,16 @@ else{
 }
 
 
-while((playerScore < 5) && (pcScore < 5) ){
+while((playerScore < 5) && (computerScore < 5) ){
     game();
 }
 
 if (playerScore == 5){
     window.alert("YOU WIN")
-}else if (pcScore ==  5){
-    window.alert("YOU LOOOOOOOSE")
+    console.log('player won')
+}else if ( computerScore ==  5){
+    window.alert("YOU LOSE")
+    console.log('computer won')
 }
 
 
