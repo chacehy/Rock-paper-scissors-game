@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="app.js"></script>
+    <link rel="stylesheet" href="input.css">
+</head>
+<body>
+  <div class="container">
+    <div class="text">
+    <h1 class="welcomeH"> ROCK PAPER SCISSORS</h1>
+    <p class="choice">CHOOSE YOUR MIGHTY WEAPON</p>
+  </div>
+    <div class="buttons">
+        <button type="button" onclick="game('rock')" id="rock">✊</button>
+        <button type="button" onclick="game('paper')" id="paper">✋</button>
+        <button type="button" onclick="game('scissors')" id="scissors">✌️</button>
+    </div>
+    <div id="score" class="scoreboard">
+      <p id="scoreDisplay"></p>
+    </div>
+  </div>
+</body>
+</html>
